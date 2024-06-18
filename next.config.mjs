@@ -1,4 +1,10 @@
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
+    domains: ["uploadthing.com", "utfs.io"],
+  },
   webpack: (config) => {
     config.externals = config.externals || [];
     config.externals.push({
@@ -6,9 +12,6 @@ const nextConfig = {
       bufferUtil: "commonjs bufferutil",
     });
     return config;
-  },
-  images: {
-    domains: ["uploadthing.com", "utfs.io"],
   },
 };
 

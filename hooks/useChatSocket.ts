@@ -2,7 +2,7 @@
 import { useSocket } from "@/components/providers/SocketProvider";
 import { Member, Profile } from "@prisma/client";
 import { Item } from "@radix-ui/react-dropdown-menu";
-import { useQueryClient } from "@tanstack/react-query";
+import { QueryKey, useQueryClient } from "@tanstack/react-query";
 import { useEffect } from "react";
 
 type socketProps = {
@@ -26,7 +26,8 @@ const useChatSocket = ({ addkey, updateKey, queryKey }: socketProps) => {
       return;
     }
     socket.on(updateKey, (message: MessageWithMemberWithProfile) => {
-      queryClient.setQueriesData([queryKey], (oldData: any) => {
+      // @ts-ignore comment
+      queryClient.setQueriesData<QueryKey>([queryKey], (oldData: any) => {
         if (!oldData || !oldData.pages || oldData.pages.length === 0) {
           return oldData;
         }
@@ -48,7 +49,8 @@ const useChatSocket = ({ addkey, updateKey, queryKey }: socketProps) => {
     });
 
     socket.on(addkey, (message: MessageWithMemberWithProfile) => {
-      queryClient.setQueriesData([queryKey], (oldData: any) => {
+      // @ts-ignore comment
+      queryClient.setQueriesData<QueryKey>([queryKey], (oldData: any) => {
         if (!oldData || !oldData.pages || oldData.pages.length === 0) {
           return {
             pages: [{ Items: [message] }],

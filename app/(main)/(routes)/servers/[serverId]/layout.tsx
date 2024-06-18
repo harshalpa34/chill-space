@@ -20,7 +20,7 @@ const layout = async ({
 
   const servers = await db.server.findUnique({
     where: {
-      id: params.serverId,
+      id: params?.serverId,
       members: {
         some: {
           profileId: profile.id,
@@ -36,7 +36,7 @@ const layout = async ({
   return (
     <div className="h-full">
       <div className="hidden fixed md:flex h-full w-60 z-30 flex-col inset-y-0">
-        <ServerSidebar serverId={params.serverId} />
+        <ServerSidebar serverId={params?.serverId} />
       </div>
       <main className="h-full md:pl-60">{children}</main>
     </div>

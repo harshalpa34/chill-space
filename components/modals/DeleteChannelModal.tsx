@@ -20,16 +20,18 @@ const DeleteChannelModal = () => {
   const { isOpen, type, onClose, data } = useModalStore();
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const { serverId } = useParams();
+  const params = useParams();
   const { channel } = data;
-  
+
   const open = isOpen && type === "deleteChannel";
 
   const onDeleteChannel = async () => {
     if (channel) {
       try {
         setIsLoading(true);
-        await axios.delete(`/api/server/${serverId}/channel/${channel.id}`);
+        await axios.delete(
+          `/api/server/${params?.serverId}/channel/${channel.id}`
+        );
         onClose();
         router.refresh();
       } catch (error) {

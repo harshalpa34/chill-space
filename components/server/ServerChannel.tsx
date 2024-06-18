@@ -29,7 +29,7 @@ const ServerChannel = ({ channel, role, server }: ServerChannelProps) => {
           : "text-zinc-400 hover:bg-zinc-700/50"
       )}
       onClick={() =>
-        router.push(`/servers/${params.serverId}/channels/${channel.id}`)
+        router.push(`/servers/${params?.serverId}/channels/${channel.id}`)
       }
     >
       {iconMap[channel.type]}

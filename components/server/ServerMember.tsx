@@ -25,7 +25,7 @@ const ServerMember = ({ member }: ServerChannelProps) => {
           : "text-zinc-400"
       )}
       onClick={() =>
-        router.push(`/servers/${params.serverId}/conversations/${member.id}`)
+        router.push(`/servers/${params?.serverId}/conversations/${member.id}`)
       }
     >
       <UserAvatar src={member.profile.imageUrl} className="mr-2 h-9 w-9 md:h-8 md:w-8" />

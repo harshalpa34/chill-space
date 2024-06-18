@@ -23,7 +23,7 @@ interface SearchCommandMenuProps {
           id: string;
         }[]
       | undefined;
-  };
+  }[];
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -43,10 +43,10 @@ const SearchCommandMenu: React.FC<SearchCommandMenuProps> = ({
     type: "member" | "channel";
   }) => {
     if (type === "member") {
-      router.push(`/servers/${params.serverId}/conversations/${id}`);
+      router.push(`/servers/${params?.serverId}/conversations/${id}`);
     }
     if (type === "channel") {
-      router.push(`/servers/${params.serverId}/channels/${id}`);
+      router.push(`/servers/${params?.serverId}/channels/${id}`);
     }
 
     setOpen(false);
@@ -62,12 +62,12 @@ const SearchCommandMenu: React.FC<SearchCommandMenuProps> = ({
         <CommandEmpty>No results found.</CommandEmpty>
         {data &&
           data.map(({ label, data, type }) => {
-            if (data.length === 0) {
+            if (data?.length === 0) {
               return null;
             }
             return (
               <CommandGroup heading={label} key={label}>
-                {data.map(({ id, icon, name }) => (
+                {data?.map(({ id, icon, name }) => (
                   <CommandItem
                     key={id}
                     className="cursor-pointer"

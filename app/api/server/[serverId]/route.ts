@@ -15,7 +15,7 @@ export async function PATCH(
     }
 
     const server = await db.server.update({
-      where: { id: params.serverId, profileId: profile.id },
+      where: { id: params?.serverId, profileId: profile.id },
       data: { name, imageUrl },
     });
 
@@ -35,7 +35,7 @@ export async function DELETE(
     if (!profile) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
-    if (!params.serverId) {
+    if (!params?.serverId) {
       return new NextResponse("Server id missing", { status: 400 });
     }
     const server = await db.server.delete({

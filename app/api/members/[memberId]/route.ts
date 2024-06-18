@@ -20,7 +20,7 @@ export async function PATCH(
       return new NextResponse("server id missing", { status: 400 });
     }
 
-    if (!params.memberId) {
+    if (!params?.memberId) {
       return new NextResponse("member id missing", { status: 400 });
     }
 
@@ -30,7 +30,7 @@ export async function PATCH(
         members: {
           update: {
             where: {
-              id: params.memberId,
+              id: params?.memberId,
               profileId: {
                 not: profile.id,
               },
@@ -78,7 +78,7 @@ export async function DELETE(
       return new NextResponse("server id missing", { status: 400 });
     }
 
-    if (!params.memberId) {
+    if (!params?.memberId) {
       return new NextResponse("member id missing", { status: 400 });
     }
 
@@ -87,7 +87,7 @@ export async function DELETE(
       data: {
         members: {
           deleteMany: {
-            id: params.memberId,
+            id: params?.memberId,
             profileId: {
               not: profile.id,
             },

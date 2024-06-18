@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { useModalStore } from "@/hooks/useModalStore";
-import { ServerWithMembersWithProfiles } from "@/types";
+import { MemberWithProfile, ServerWithMembersWithProfiles } from "@/types";
 import { useState } from "react";
 import { ScrollArea } from "../ui/scroll-area";
 import UserAvatar from "@/components/UserAvatar";
@@ -34,7 +34,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import { MemberRole } from "@prisma/client";
+import { $Enums, Member, MemberRole } from "@prisma/client";
 
 import qs from "query-string";
 import axios from "axios";
@@ -45,6 +45,7 @@ const roleIconMap = {
   MODERATOR: <ShieldCheck className="h-4 w-4 ml-2 text-indigo-500" />,
   ADMIN: <ShieldAlert className="h-4 w-4 text-rose-500" />,
 };
+
 const MembersModal = () => {
   const router = useRouter();
   const { onOpen, isOpen, type, onClose, data } = useModalStore();
@@ -106,12 +107,15 @@ const MembersModal = () => {
         </DialogHeader>
         <ScrollArea className="mt-8 max-h-[420px] pr-6">
           {server?.members?.map((member) => (
-            <div className="flex items-center gap-x-2 mb-6" key={member.id}>
+            <div
+              className="flex items-center gap-x-2 mb-6"
+              key={member?.profile?.id}
+            >
               <UserAvatar src={member.profile.imageUrl} />
               <div className="flex flex-col gap-y-1">
                 <div className="text-xs font-semibold flex items-center gap-x-1">
                   {member.profile.name}
-                  {roleIconMap[member.role]}
+                  {roleIconMap[member?.role]}
                 </div>
                 <p className="text-xs text-zinc-300">{member.profile.email}</p>
               </div>

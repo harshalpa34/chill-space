@@ -15,7 +15,7 @@ const Page = async ({ params }: props) => {
 
   const server = await db.server.findUnique({
     where: {
-      id: params.serverId,
+      id: params?.serverId,
       members: {
         some: {
           profileId: profile.id,
@@ -40,7 +40,7 @@ const Page = async ({ params }: props) => {
     return null;
   }
 
-  return redirect(`/servers/${params.serverId}/channels/${channel.id}`);
+  return redirect(`/servers/${params?.serverId}/channels/${channel.id}`);
 };
 
 export default Page;

@@ -15,7 +15,7 @@ interface ServerSearchProps {
           id: string;
         }[]
       | undefined;
-  };
+  }[];
 }
 
 const ServerSearch = ({ data }: ServerSearchProps) => {
