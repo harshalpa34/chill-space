@@ -1,8 +1,9 @@
 import { currentProfileServer } from "@/lib/current-profile-server";
 import { db } from "@/lib/db";
+import { NextApiResponseServerIo } from "@/types";
 import { NextApiRequest, NextApiResponse } from "next";
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (req: NextApiRequest, res: NextApiResponseServerIo) => {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
