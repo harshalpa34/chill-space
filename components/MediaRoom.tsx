@@ -2,11 +2,14 @@
 
 import { useUser } from "@clerk/nextjs";
 import {
+  AudioConference,
   ControlBar,
   GridLayout,
   LiveKitRoom,
+  ParticipantAudioTile,
   ParticipantTile,
   RoomAudioRenderer,
+  TrackLoop,
   useTracks,
 } from "@livekit/components-react";
 import "@livekit/components-styles";
@@ -23,6 +26,7 @@ export default function MediaRoom({ chatId, video, audio }: MediaProps) {
   const { user } = useUser();
   const [token, setToken] = useState("");
 
+  // const audioTracks = useTracks([Track.Source.Microphone]);
   useEffect(() => {
     if (!user?.firstName || !user?.lastName) return;
 
@@ -58,9 +62,12 @@ export default function MediaRoom({ chatId, video, audio }: MediaProps) {
       data-lk-theme="default"
       connect={true}
     >
-      <MyVideoConference />
-      <RoomAudioRenderer />
-      <ControlBar />
+      <AudioConference />
+      {/* <RoomAudioRenderer />
+      <ControlBar /> */}
+      {/* <TrackLoop tracks={audioTracks}>
+        <ParticipantAudioTile />
+      </TrackLoop> */}
     </LiveKitRoom>
   );
 }

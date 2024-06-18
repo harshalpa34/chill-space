@@ -151,7 +151,7 @@ const CreateChannelModal = () => {
                       </FormControl>
 
                       <SelectContent>
-                        {Object.values(ChannelType).map((type) => (
+                        {/* {Object.values(ChannelType).map((type) => (
                           <SelectItem
                             key={type}
                             value={type}
@@ -159,7 +159,11 @@ const CreateChannelModal = () => {
                           >
                             {type.toLowerCase()}
                           </SelectItem>
-                        ))}
+                        ))} */}
+
+                        <SelectItem value={"TEXT"} className="capitalize">
+                          TEXT
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
