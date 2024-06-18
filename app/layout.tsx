@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import "./constant.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { cn } from "@/lib/utils";
+import { ModalProvider } from "@/components/providers/ModalProvider";
+import Sidebar from "@/components/navigation/Sidebar";
+import { SocketProvider } from "@/components/providers/SocketProvider";
+import QueryProvider from "@/components/providers/QueryProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +23,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={cn(font.className, "bg-white dark:bg-[#313338]")}>
+          <SocketProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              storageKey="discord-theme"
+            >
+              <div className="hidden md:flex h-full w-[72px] z-40 flex-col fixed inset-y-0">
+                <Sidebar />
+              </div>
+              <QueryProvider>{children}</QueryProvider>
+            </ThemeProvider>
+            <ModalProvider />
+          </SocketProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
