@@ -1,6 +1,6 @@
 "use client";
 
-import { useSocket } from "@/components/providers/SocketProvider";
+import { useSocket } from "../components/providers/SocketProvider";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import axios from "axios";
 import qs from "query-string";

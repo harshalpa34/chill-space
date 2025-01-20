@@ -5,14 +5,14 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 
-import { useModalStore } from "@/hooks/useModalStore";
+import { useModalStore } from "../../hooks/useModalStore";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Check, Copy, RefreshCw } from "lucide-react";
-import { useOrigin } from "@/hooks/useOrigin";
+import { useOrigin } from "../../hooks/useOrigin";
 import { useState } from "react";
 import axios from "axios";
 

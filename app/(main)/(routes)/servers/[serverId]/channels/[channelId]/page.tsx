@@ -1,9 +1,9 @@
-import MediaRoom from "@/components/MediaRoom";
-import ChatHeader from "@/components/chat/ChatHeader";
-import ChatInput from "@/components/chat/ChatInput";
-import ChatMessages from "@/components/chat/ChatMessages";
-import { currentProfile } from "@/lib/current-profile";
-import { db } from "@/lib/db";
+import MediaRoom from "../../../../../../../components/MediaRoom";
+import ChatHeader from "../../../../../../../components/chat/ChatHeader";
+import ChatInput from "../../../../../../../components/chat/ChatInput";
+import ChatMessages from "../../../../../../../components/chat/ChatMessages";
+import { currentProfile } from "../../../../../../../lib/current-profile";
+import { db } from "../../../../../../../lib/db";
 import { redirectToSignIn } from "@clerk/nextjs";
 import { ChannelType } from "@prisma/client";
 import { redirect } from "next/navigation";

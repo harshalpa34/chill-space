@@ -1,10 +1,10 @@
 "use client";
 
-import { ServerWithMembersWithProfiles } from "@/types";
+import { ServerWithMembersWithProfiles } from "../../types";
 import { ChannelType, MemberRole, Server } from "@prisma/client";
 import ActionTooltip from "../action-tooltip";
 import { Plus, Settings } from "lucide-react";
-import { useModalStore } from "@/hooks/useModalStore";
+import { useModalStore } from "../../hooks/useModalStore";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/router";
 

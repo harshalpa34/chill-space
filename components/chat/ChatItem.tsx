@@ -7,7 +7,7 @@ import { roleIconMap } from "../server/ServerSidebar";
 import Image from "next/image";
 import { EditIcon, FileIcon, TrashIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import { Form, FormControl, FormField, FormItem } from "../ui/form";
 import { useForm } from "react-hook-form";
 import { Input } from "../ui/input";
@@ -16,7 +16,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../ui/button";
 import qs from "query-string";
 import axios from "axios";
-import { useModalStore } from "@/hooks/useModalStore";
+import { useModalStore } from "../../hooks/useModalStore";
 import { useParams, useRouter } from "next/navigation";
 
 interface ChatItemProps {

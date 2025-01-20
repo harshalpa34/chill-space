@@ -1,7 +1,7 @@
-import { currentProfileServer } from "@/lib/current-profile-server";
-import { db } from "@/lib/db";
-import { NextApiResponseServerIo } from "@/types";
-import { NextApiRequest, NextApiResponse } from "next";
+import { currentProfileServer } from "../../../../lib/current-profile-server";
+import { db } from "../../../../lib/db";
+import { NextApiResponseServerIo } from "../../../../types";
+import { NextApiRequest } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponseServerIo) => {
   if (req.method !== "POST") {

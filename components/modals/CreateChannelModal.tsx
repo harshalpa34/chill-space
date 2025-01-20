@@ -10,7 +10,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 
 import {
   Form,
@@ -19,11 +19,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+} from "../../components/ui/form";
+import { Input } from "../../components/ui/input";
+import { Button } from "../../components/ui/button";
 import { useParams, useRouter } from "next/navigation";
-import { useModalStore } from "@/hooks/useModalStore";
+import { useModalStore } from "../../hooks/useModalStore";
 import {
   Select,
   SelectContent,

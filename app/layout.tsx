@@ -3,12 +3,12 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import "./constant.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { ThemeProvider } from "@/components/providers/theme-provider";
-import { cn } from "@/lib/utils";
-import { ModalProvider } from "@/components/providers/ModalProvider";
-import Sidebar from "@/components/navigation/Sidebar";
-import { SocketProvider } from "@/components/providers/SocketProvider";
-import QueryProvider from "@/components/providers/QueryProvider";
+import { ThemeProvider } from "../components/providers/theme-provider";
+import { cn } from "../lib/utils";
+import { ModalProvider } from "../components/providers/ModalProvider";
+import Sidebar from "../components/navigation/Sidebar";
+import { SocketProvider } from "../components/providers/SocketProvider";
+import QueryProvider from "../components/providers/QueryProvider";
 
 const font = Open_Sans({ subsets: ["latin"] });
 

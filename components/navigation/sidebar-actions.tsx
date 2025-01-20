@@ -2,7 +2,7 @@
 
 import { Plus } from "lucide-react";
 import ActionTooltip from "../action-tooltip";
-import { useModalStore } from "@/hooks/useModalStore";
+import { useModalStore } from "../../hooks/useModalStore";
 
 const SidebarActions = () => {
   const { onOpen } = useModalStore();

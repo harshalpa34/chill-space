@@ -6,9 +6,9 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 
-import { useModalStore } from "@/hooks/useModalStore";
+import { useModalStore } from "../../hooks/useModalStore";
 import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import { Loader2 } from "lucide-react";

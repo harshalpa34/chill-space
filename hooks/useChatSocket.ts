@@ -1,7 +1,6 @@
 "use client";
-import { useSocket } from "@/components/providers/SocketProvider";
+import { useSocket } from "../components/providers/SocketProvider";
 import { Member, Profile } from "@prisma/client";
-import { Item } from "@radix-ui/react-dropdown-menu";
 import { QueryKey, useQueryClient } from "@tanstack/react-query";
 import { useEffect } from "react";
 

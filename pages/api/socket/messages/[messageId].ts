@@ -1,6 +1,6 @@
-import { currentProfileServer } from "@/lib/current-profile-server";
-import { db } from "@/lib/db";
-import { NextApiResponseServerIo } from "@/types";
+import { currentProfileServer } from "../../../../lib/current-profile-server";
+import { db } from "../../../../lib/db";
+import { NextApiResponseServerIo } from "../../../../types";
 import { MemberRole } from "@prisma/client";
 import { NextApiRequest } from "next";
 

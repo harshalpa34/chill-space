@@ -6,13 +6,13 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "../../components/ui/dialog";
 
-import { useModalStore } from "@/hooks/useModalStore";
-import { MemberWithProfile, ServerWithMembersWithProfiles } from "@/types";
+import { useModalStore } from "../../hooks/useModalStore";
+import { MemberWithProfile, ServerWithMembersWithProfiles } from "../../types";
 import { useState } from "react";
 import { ScrollArea } from "../ui/scroll-area";
-import UserAvatar from "@/components/UserAvatar";
+import UserAvatar from "../../components/UserAvatar";
 import {
   Check,
   Gavel,

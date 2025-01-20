@@ -3,13 +3,9 @@
 import { useUser } from "@clerk/nextjs";
 import {
   AudioConference,
-  ControlBar,
   GridLayout,
   LiveKitRoom,
-  ParticipantAudioTile,
   ParticipantTile,
-  RoomAudioRenderer,
-  TrackLoop,
   useTracks,
 } from "@livekit/components-react";
 import "@livekit/components-styles";

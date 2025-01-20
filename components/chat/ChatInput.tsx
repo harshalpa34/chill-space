@@ -8,7 +8,7 @@ import { Plus, Smile } from "lucide-react";
 import { Input } from "../ui/input";
 import qs from "query-string";
 import axios from "axios";
-import { useModalStore } from "@/hooks/useModalStore";
+import { useModalStore } from "../../hooks/useModalStore";
 import EmojiPicker from "../EmojiPicker";
 
 interface chatInputProps {

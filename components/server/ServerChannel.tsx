@@ -2,12 +2,12 @@
 
 import { Channel, MemberRole, Server } from "@prisma/client";
 import { iconMap } from "./ServerSidebar";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import ActionTooltip from "../action-tooltip";
 import { Edit, Trash } from "lucide-react";
-import { useModalStore } from "@/hooks/useModalStore";
+import { useModalStore } from "../../hooks/useModalStore";
 
 interface ServerChannelProps {
   channel: Channel;
